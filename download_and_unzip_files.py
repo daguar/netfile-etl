@@ -8,6 +8,6 @@ remote_path = "https://ssl.netfile.com/pub2/excel/COAKBrowsable/"
 for year in years_with_data:
   print "Downloading " + str(year) + " data..."
   filename_for_year = "efile_newest_COAK_" + str(year) + ".zip"
-  os.system("wget " + remote_path + filename_for_year)
+  os.system("curl -f -L -O " + remote_path + filename_for_year)
   os.system("unzip " + filename_for_year)
   os.system("rm " + filename_for_year)
