@@ -62,6 +62,10 @@ You can run the scripts by running the `run_all.sh` script.
 
 When running as a cron job, we encountered an issue of cron being unable to find the `in2csv` program. We fixed this by modifying that part of the script, changing "in2csv" on line 15 to the full path of where it was installed, such as "/opt/local/in2csv". (You can find the full path by running `which in2csv`.)
 
+### Running on Windows with Vagrant
+
+You can run these scripts on a Windows computer by using the excellent Vagrant virtual machine stack. For instructions, [click here](https://github.com/daguar/netfile-etl/issues/2).
+
 ## Copyright & License
 
 Copyright Dave Guarino, 2014
