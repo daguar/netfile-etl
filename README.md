@@ -66,6 +66,15 @@ When running as a cron job, we encountered an issue of cron being unable to find
 
 You can run these scripts on a Windows computer by using the excellent Vagrant virtual machine stack. For instructions, [click here](https://github.com/daguar/netfile-etl/issues/2).
 
+## Oakland's Setup
+
+The current (alpha) setup in Oakland is:1
+
+1. The scripts are run nightly via a cron job on an Ubuntu virtual machine, running on a city staffer's Windows desktop using the wonderful Vagrant (see above)
+2. The scripts dump the data to a folder shared with the Windows host machine (via the `/vagrant` folder in the virtual machine)
+3. We use [Socrata DataSync](http://support.socrata.com/entries/24241271-Setting-up-a-basic-DataSync-job) to upload the CSVs from that local folder to the Socrata open data portal
+4. Windows Task Scheduler is used (see [tutorial here](http://support.socrata.com/entries/24234461-Scheduling-a-DataSync-job-using-Windows-Task-Scheduler)) to automatically re-upload new files every day
+
 ## Copyright & License
 
 Copyright Dave Guarino, 2014
